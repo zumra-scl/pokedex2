@@ -1,7 +1,11 @@
-<h1>Pokemon Generator</h1>
+<%- include("partials/header") %>
+
+<h2>Select Generation</h2>
 
 <% for(let i = 1; i <= 9; i++) { %>
   <a href="/sukupolvi/<%= i %>">
-    <button>Sukupolvi <%= i %></button>
+    <button>Generation <%= i %></button>
   </a>
 <% } %>
+
+<%- include("partials/footer") %>

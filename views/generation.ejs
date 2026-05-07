@@ -1,5 +1,6 @@
+<%- include("partials/header") %>
 
-<h1>Sukupolvi <%= numero %></h1>
+<h2>Generation <%= numero %></h2>
 
 <ul>
   <% pokemonList.forEach(p => { %>
@@ -11,4 +12,4 @@
   <% }) %>
 </ul>
 
-<a href="/">Takaisin</a>
+<%- include("partials/footer") %>
