@@ -1,0 +1,14 @@
+
+<h1>Sukupolvi <%= numero %></h1>
+
+<ul>
+  <% pokemonList.forEach(p => { %>
+    <li>
+      <a href="/pokemon/<%= p.name %>">
+        <%= p.name %>
+      </a>
+    </li>
+  <% }) %>
+</ul>
+
+<a href="/">Takaisin</a>
