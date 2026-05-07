@@ -12,7 +12,7 @@ header {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: #333;
 }
 
@@ -21,8 +21,8 @@ a:hover {
 }
 
 button {
-  padding: 10px 15px;
-  margin: 5px;
+  padding: 70px 35px;
+  margin: 7px;
   border: none;
   background: #ef5350;
   color: white;
@@ -41,4 +41,44 @@ img {
 ul {
   list-style: none;
   padding: 0;
+}
+input[type="text"] {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-transform: capitalize;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #ef5350;
+  color: white;
+}
+
+.pokemon-card {
+  background: white;
+  width: 300px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-card img {
+  width: 150px;
 }

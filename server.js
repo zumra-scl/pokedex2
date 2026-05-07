@@ -25,7 +25,7 @@ app.get("/sukupolvi/:numero", async (req, res) => {
 
     res.render("generation", { pokemonList, numero });
   } catch (err) {
-    res.send("Virhe sukupolven haussa");
+    res.render("error", { message: "Generation error" });
   }
 });
 
@@ -36,14 +36,38 @@ app.get("/pokemon/:nimi", async (req, res) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nimi}`);
 
     if (!response.ok) {
-      return res.send("Pokemonia ei löytynyt");
+      return res.status(404).render("error", {
+        message: "Pokemon not found",
+      });
     }
 
     const pokemon = await response.json();
 
     res.render("pokemon", { pokemon });
   } catch (err) {
-    res.send("Virhe pokemon-haussa");
+    res.render("error", { message: "Pokemon error" });
+  }
+});
+
+app.get("/pokemon-search", async (req, res) => {
+  try {
+    const name = (req.query.name || "").toLowerCase();
+
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+
+    if (!response.ok) {
+      return res.status(404).render("error", {
+        message: "Pokemon not found!",
+      });
+    }
+
+    const pokemon = await response.json();
+
+    res.render("pokemon", { pokemon });
+  } catch (err) {
+    res.status(500).render("error", {
+      message: "Server error",
+    });
   }
 });
 

@@ -2,14 +2,12 @@
 
 <h2>Generation <%= numero %></h2>
 
-<ul>
+<div class="grid">
   <% pokemonList.forEach(p => { %>
-    <li>
-      <a href="/pokemon/<%= p.name %>">
-        <%= p.name %>
-      </a>
-    </li>
+    <a class="card" href="/pokemon/<%= p.name %>">
+      <h3><%= p.name %></h3>
+    </a>
   <% }) %>
-</ul>
+</div>
 
 <%- include("partials/footer") %>

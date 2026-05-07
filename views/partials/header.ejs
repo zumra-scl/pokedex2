@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pokedex</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+  <head>
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Pokedex</h1>
+      <nav>
+        <form action="/pokemon-search" method="GET">
+          <input
+            type="text"
+            name="name"
+            placeholder="Search Pokemon..."
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
 
-<header>
-  <h1>Pokedex</h1>
-  <nav>
-    <a href="/">Home</a>
-  </nav>
-</header>
+        <a href="/">Home</a>
+      </nav>
+    </header>
 
-<hr>
+    <hr />
+  </body>
+</html>
